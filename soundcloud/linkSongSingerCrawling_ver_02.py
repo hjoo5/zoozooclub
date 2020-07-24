@@ -6,7 +6,7 @@ import requests
 url_homepage = "https://soundcloud.com/discover"
 
 driver = webdriver.Chrome(
-    "/Users/seongminheo/Desktop/teamproject/soundcloudcrawling/chromedriver")
+    "/Users/seongminheo/Desktop/teamproject/soundcloudcrawling/chromedriver") # modify the chromewebdriver address to execute the code.
 driver.get(url_homepage)
 
 # login
