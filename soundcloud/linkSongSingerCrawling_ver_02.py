@@ -5,8 +5,7 @@ import requests
 
 url_homepage = "https://soundcloud.com/discover"
 
-driver = webdriver.Chrome(
-    "/Users/seongminheo/Desktop/teamproject/soundcloudcrawling/chromedriver") # modify the chromewebdriver address to execute the code.
+driver = webdriver.Chrome("/Users/seongminheo/Desktop/teamproject/soundcloudcrawling/chromedriver") # modify the chromewebdriver address to execute the code.
 driver.get(url_homepage)
 
 # login
@@ -160,7 +159,7 @@ for i, genre in enumerate(top50):
     soup = BeautifulSoup(page_source, 'html.parser')
 
     # scroll down
-    for i in range(5):
+    for j in range(5):
         # document.body.scrollHeight : 페이지 세로 길이
         driver.execute_script(
             "window.scrollTo(0, document.body.scrollHeight);")
@@ -171,13 +170,13 @@ for i, genre in enumerate(top50):
     soup = BeautifulSoup(page_source, 'html.parser')
 
     # append link, song title, singer to each list
-    for i in range(len(soup.find_all('a', class_='trackItem__trackTitle'))):
+    for k in range(len(soup.find_all('a', class_='trackItem__trackTitle'))):
         top50[genre]['link'].append(soup.find_all(
-            'a', class_='trackItem__trackTitle')[i]['href'])
+            'a', class_='trackItem__trackTitle')[k]['href'])
         top50[genre]['songTitle'].append(soup.find_all(
-            'a', class_='trackItem__trackTitle')[i].text)
+            'a', class_='trackItem__trackTitle')[k].text)
         top50[genre]['singer'].append(soup.find_all(
-            'a', class_='trackItem__username')[i].text)
+            'a', class_='trackItem__username')[k].text)
 
     # for i in range(len(soup.find_all('a', class_='trackItem__trackTitle'))): # for loop test
     #     top50['allMusic']['link'].append(soup.find_all(
@@ -195,11 +194,11 @@ for i, genre in enumerate(top50):
     #       " link, songtitle and singer of songs in [top50 all genres] collected")
 
     # click download button if present
-    for i, link in enumerate(top50[genre]['link']):
+    for m, link in enumerate(top50[genre]['link']):
         link_base = 'https://soundcloud.com/'
         link_song = link_base + link
         print(link_song)
-        print('\'' + top50[genre]['songTitle'][i] + '\'' + ' is in progress')
+        print('\'' + top50[genre]['songTitle'][m] + '\'' + ' is in progress')
 
         driver.get(link_song)
         time.sleep(2)
@@ -210,7 +209,7 @@ for i, genre in enumerate(top50):
             driver.find_element_by_css_selector(
                 'button.sc-button-download').click()
             top50[genre]['cnt_download'] += 1
-            print('----------- \'' + top50[genre]['songTitle'][i] + '\'' +
+            print('----------- \'' + top50[genre]['songTitle'][m] + '\'' + \
                   ' is downloaded -----------' + 'cnt_download: ' + top50[genre]['cnt_download'])
         except:
             pass
