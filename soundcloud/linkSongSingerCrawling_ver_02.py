@@ -5,7 +5,9 @@ import requests
 
 url_homepage = "https://soundcloud.com/discover"
 
-driver = webdriver.Chrome("/Users/seongminheo/Desktop/teamproject/soundcloudcrawling/chromedriver") # modify the chromewebdriver address to execute the code.
+# modify the chromewebdriver address to execute the code.
+driver = webdriver.Chrome(
+    "/Users/seongminheo/Desktop/teamproject/soundcloudcrawling/chromedriver")
 driver.get(url_homepage)
 
 # login
@@ -24,6 +26,11 @@ driver.get(url_homepage)
 
 
 top50 = {
+    'ambient': {'url': 'https://soundcloud.com/discover/sets/charts-top:ambient:kr',
+                'cnt_download': 0,
+                'link': [],
+                'songTitle': [],
+                'singer': []},
     'allMusic': {'url': 'https://soundcloud.com/discover/sets/charts-top:all-music:kr',
                  'cnt_download': 0,
                  'link': [],
@@ -34,11 +41,6 @@ top50 = {
                   'link': [],
                   'songTitle': [],
                   'singer': []},
-    'ambient': {'url': 'https://soundcloud.com/discover/sets/charts-top:ambient:kr',
-                'cnt_download': 0,
-                'link': [],
-                'songTitle': [],
-                'singer': []},
     'classical': {'url': 'https://soundcloud.com/discover/sets/charts-top:classical:kr',
                   'cnt_download': 0,
                   'link': [],
@@ -151,6 +153,7 @@ for i, genre in enumerate(top50):
     try:
         driver.find_element_by_xpath(
             '/html/body/div[3]/div/div/button').click()
+        print('Popup cleared')
     except:
         print('Popup \'Like this playlist\' deosn\'t show')
 
@@ -204,16 +207,16 @@ for i, genre in enumerate(top50):
         time.sleep(2)
         driver.find_element_by_css_selector(
             'button.sc-button-more.sc-button.sc-button-medium.sc-button-responsive').click()
-
+        
         try:
-            driver.find_element_by_css_selector(
-                'button.sc-button-download').click()
+            driver.find_element_by_css_selector('button.sc-button-download').click()
             top50[genre]['cnt_download'] += 1
-            print('----------- \'' + top50[genre]['songTitle'][m] + '\'' + \
-                  ' is downloaded -----------' + 'cnt_download: ' + top50[genre]['cnt_download'])
+            print('----------- \'' + top50[genre]['songTitle'][m] + '\'' +
+                  ' is downloaded -----------' + ' cnt_download: ' + str(top50[genre]['cnt_download']))
+            print('')
         except:
-            pass
+            print('No download button')
+            print('')
 
 # to do
-# 1. # click download button if present에서 try except 구문 수정
-# 2. 로그인 부분,,, 자동으로 할 수 있으면 해야 함
+# 1. 로그인 부분,,, 자동으로 할 수 있으면 해야 함
