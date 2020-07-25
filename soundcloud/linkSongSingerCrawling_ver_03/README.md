@@ -7,7 +7,7 @@
 
 ## 2.2 makingChartList.py
 - ChartList.json을 만드는 파일입니다.
-- chartList 변수는 chart를 key로 갖는 딕셔너리 타입 변수입니다.
+- chartList는 chart의 이름을 key로 갖는 딕셔너리 타입 변수입니다.
 ```python
 chartList.keys()
 ```
