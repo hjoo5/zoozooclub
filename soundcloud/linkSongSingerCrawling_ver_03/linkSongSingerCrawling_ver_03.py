@@ -98,3 +98,4 @@ write_json(chartList, 'crawlingResult.json')
 
 # to do
 # 1. 로그인 부분,,, 자동으로 할 수 있으면 해야 함
+# 2. more button 가끔씩 못 찾는다. css seletor 수정 필요
