@@ -24,6 +24,7 @@ chartList['newHot'].keys()
 chartList['top50']['rbSoul'].keys()
 ```
 > dict_keys(['url', 'cnt_download', 'link', 'songTitle', 'singer'])
+
 	- url: 해당 차트의 해당 장르의 url을 value로 갖습니다.
 	- cnt_download: 초기값은 0이며 노래 한 곡을 다운로드 받을 때 1씩 증가하여, 결과적으로 다운로드 한 노래의 수를 count합니다.
 	- link: 초기에는 빈 리스트이며 크롤링을 진행하면 해당 차트의 해당 장르의 곡들의 링크를 추가하는 리스트입니다.
