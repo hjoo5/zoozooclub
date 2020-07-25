@@ -1,6 +1,6 @@
 # 사용한 음악파일: 공유드라이브에 올려놨어요
 - /주주클럽/허성민_heosm/audioFeatureExtraction_practice/audiofile
-- genre는 0~2: ambient 3~5: metal 이라서 각 두 그룹의 특징들을 비교하면 좋아요
+- genre는 0'~2: ambient 3'~5: metal 이라서 각 두 그룹의 특징들을 비교하면 좋아요
 
 # etc
 - 젤 위에있는 사이트 코드 따라함
