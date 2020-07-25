@@ -318,7 +318,7 @@ for a, chart in enumerate(chartList):
                 print('No download button')
                 print('')
 
-    # print result
+    # print number of downloaded song for each genre in chart
     for genre in chartList[chart]:
         print('song downloaded in [' + genre + ']: ' +
               str(chartList[chart][genre]['cnt_download']))
