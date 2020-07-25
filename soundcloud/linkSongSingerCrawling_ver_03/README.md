@@ -10,12 +10,12 @@
 ```python
 chartList.keys()
 ```
-dict_keys(['top50', 'newHot'])
+> dict_keys(['top50', 'newHot'])
 - 각 chart는 23개의 genre를 key로 갖는 딕셔너리 타입 변수입니다.
 ```python
 chartList['newHot'].keys()
 ```
-dict_keys(['ambient', 'allMusic', 'alterRock', 'classical', 'country', 'danceedm', 'dancehall', 'deephouse', 'disco', 'drumbass', 'dubstep', 'eletronic', 'folkSingersongwriter', 'hiphopRap', 'house', 'indie', 'jazzBlues', 'metal', 'pop', 'rbSoul', 'rock', 'soundtrack', 'world'])
+> dict_keys(['ambient', 'allMusic', 'alterRock', 'classical', 'country', 'danceedm', 'dancehall', 'deephouse', 'disco', 'drumbass', 'dubstep', 'eletronic', 'folkSingersongwriter', 'hiphopRap', 'house', 'indie', 'jazzBlues', 'metal', 'pop', 'rbSoul', 'rock', 'soundtrack', 'world'])
 - 각 gerne는 
 ## chartList.json
 - makingChartList를 실행시키면 얻을 수 있는 json 파일입니다.
