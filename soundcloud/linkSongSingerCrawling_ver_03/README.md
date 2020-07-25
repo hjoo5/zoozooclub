@@ -35,3 +35,4 @@ chartList['top50']['rbSoul'].keys()
 - 이 json 파일을 linkSongSingerCrawling에서 불러와 크롤링을 진행합니다.
 
 ## 2.4 linkSongSingerCrawling_ver_03.py
+- 중간중간 주석을 달았습니다.
