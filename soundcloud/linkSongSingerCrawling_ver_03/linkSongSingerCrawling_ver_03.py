@@ -64,7 +64,7 @@ for a, chart in enumerate(chartList):
         print(str(len(chartList[chart][genre]['link'])) +
               " link, songtitle and singer of songs in [" + genre + "] collected")
 
-        # click download button if present
+        # move page to each song and click more button
         for m, link in enumerate(chartList[chart][genre]['link']):
             link_base = 'https://soundcloud.com/'
             link_song = link_base + link
@@ -76,7 +76,8 @@ for a, chart in enumerate(chartList):
             time.sleep(2)
             driver.find_element_by_css_selector(
                 'button.sc-button-more.sc-button.sc-button-medium.sc-button-responsive').click()
-
+            
+            # click download button if present
             try:
                 driver.find_element_by_css_selector(
                     'button.sc-button-download').click()
@@ -98,4 +99,4 @@ write_json(chartList, 'crawlingResult.json')
 
 # to do
 # 1. 로그인 부분,,, 자동으로 할 수 있으면 해야 함
-# 2. # click download button if present에서 more button 가끔씩 못 찾는다. css seletor 수정 필요
+# 2. # move page to each song and click more button에서 more button 가끔씩 못 찾는다.(element의 body 약간씩 ) css seletor 수정 필요
