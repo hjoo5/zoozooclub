@@ -11,19 +11,8 @@ driver = webdriver.Chrome(
 driver.get(url_homepage)
 
 # login
-# login button
-
+# cannot find connect with google button
 # 수동로그인 -> 해결해야 함
-
-# button_login = "#app > header > div > div.header__right.sc-clearfix > div.header__loginMenu.left > button.g-opacity-transition.sc-button.sc-button-medium.loginButton"
-# driver.find_element_by_css_selector(button_login).click()
-# driver.find_element_by_class_name('sc-button-google').click()
-#
-# page_source = driver.page_source
-# soup = BeautifulSoup(page_source, 'html.parser')
-#
-# driver.find_element_by_css_selector('#app > div > div > div > div > div.provider-buttons > div:nth-child(2) > button').click()
-
 
 top50 = {
     'ambient': {'url': 'https://soundcloud.com/discover/sets/charts-top:ambient:kr',
@@ -51,7 +40,7 @@ top50 = {
                 'link': [],
                 'songTitle': [],
                 'singer': []},
-    'danceEdm': {'url': 'https://soundcloud.com/discover/sets/charts-top:danceedm:kr',
+    'danceedm': {'url': 'https://soundcloud.com/discover/sets/charts-top:danceedm:kr',
                  'cnt_download': 0,
                  'link': [],
                  'songTitle': [],
@@ -71,7 +60,7 @@ top50 = {
               'link': [],
               'songTitle': [],
               'singer': []},
-    'drumBass': {'url': 'https://soundcloud.com/discover/sets/charts-top:drumbass:kr',
+    'drumbass': {'url': 'https://soundcloud.com/discover/sets/charts-top:drumbass:kr',
                  'cnt_download': 0,
                  'link': [],
                  'songTitle': [],
@@ -136,18 +125,138 @@ top50 = {
                    'link': [],
                    'songTitle': [],
                    'singer': []},
+    'world': {'url': 'https://soundcloud.com/discover/sets/charts-top:world:kr',
+               'cnt_download': 0,
+               'link': [],
+               'songTitle': [],
+               'singer': []},
 }
 
+newHot = {
+    'ambient': {'url': 'https://soundcloud.com/discover/sets/charts-trending:ambient:kr',
+                'cnt_download': 0,
+                'link': [],
+                'songTitle': [],
+                'singer': []},
+    'allMusic': {'url': 'https://soundcloud.com/discover/sets/charts-trending:all-music:kr',
+                 'cnt_download': 0,
+                 'link': [],
+                 'songTitle': [],
+                 'singer': []},
+    'alterRock': {'url': 'https://soundcloud.com/discover/sets/charts-trending:alternativerock:kr',
+                  'cnt_download': 0,
+                  'link': [],
+                  'songTitle': [],
+                  'singer': []},
+    'classical': {'url': 'https://soundcloud.com/discover/sets/charts-trending:classical:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'country': {'url': 'https://soundcloud.com/discover/sets/charts-trending:country:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'danceedm': {'url': 'https://soundcloud.com/discover/sets/charts-trending:danceedm:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'dancehall': {'url': 'https://soundcloud.com/discover/sets/charts-trending:dancehall:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'deephouse': {'url': 'https://soundcloud.com/discover/sets/charts-trending:deephouse:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'disco': {'url': 'https://soundcloud.com/discover/sets/charts-trending:disco:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'drumbass': {'url': 'https://soundcloud.com/discover/sets/charts-trending:drumbass:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'dubstep': {'url': 'https://soundcloud.com/discover/sets/charts-trending:dubstep:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'eletronic': {'url': 'https://soundcloud.com/discover/sets/charts-trending:electronic:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'folkSingersongwriter': {'url': 'https://soundcloud.com/discover/sets/charts-trending:folksingersongwriter:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'hiphopRap': {'url': 'https://soundcloud.com/discover/sets/charts-trending:hiphoprap:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'house': {'url': 'https://soundcloud.com/discover/sets/charts-trending:house:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'indie': {'url': 'https://soundcloud.com/discover/sets/charts-trending:indie:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'jazzBlues': {'url': 'https://soundcloud.com/discover/sets/charts-trending:jazzblues:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'metal': {'url': 'https://soundcloud.com/discover/sets/charts-trending:metal:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'pop': {'url': 'https://soundcloud.com/discover/sets/charts-trending:pop:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'rbSoul': {'url': 'https://soundcloud.com/discover/sets/charts-trending:rbsoul:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'rock': {'url': 'https://soundcloud.com/discover/sets/charts-trending:rock:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'soundtrack': {'url': 'https://soundcloud.com/discover/sets/charts-trending:soundtrack:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
+    'world': {'url': 'https://soundcloud.com/discover/sets/charts-trending:world:kr',
+         'cnt_download': 0,
+         'link': [],
+         'songTitle': [],
+         'singer': []},
 
-# top50['allMusic']['link'].append('https://www.naver.com/')
-# top50['allMusic']['link'].append('https://www.google.com/')
-# top50['allMusic']['link'][0]
-# driver.get(top50['allMusic']['link'][0])
+}
+len(top50.keys())
+len(newHot.keys())
 
+# top50
 for i, genre in enumerate(top50):
     # conncet genre url
     driver.get(top50[genre]['url'])
-    # driver.get(top50['allMusic']['url']) # for loop test
 
     # clear popup
     try:
@@ -181,20 +290,9 @@ for i, genre in enumerate(top50):
         top50[genre]['singer'].append(soup.find_all(
             'a', class_='trackItem__username')[k].text)
 
-    # for i in range(len(soup.find_all('a', class_='trackItem__trackTitle'))): # for loop test
-    #     top50['allMusic']['link'].append(soup.find_all(
-    #         'a', class_='trackItem__trackTitle')[i]['href'])
-    #     top50['allMusic']['songTitle'].append(soup.find_all(
-    #         'a', class_='trackItem__trackTitle')[i].text)
-    #     top50['allMusic']['singer'].append(soup.find_all(
-    #         'a', class_='trackItem__username')[i].text)
-
     # print how many links collected
     print(str(len(top50[genre]['link'])) +
           " link, songtitle and singer of songs in [" + genre + "] collected")
-
-    # print(str(len(top50['allMusic']['link'])) + # for loop test
-    #       " link, songtitle and singer of songs in [top50 all genres] collected")
 
     # click download button if present
     for m, link in enumerate(top50[genre]['link']):
@@ -207,9 +305,10 @@ for i, genre in enumerate(top50):
         time.sleep(2)
         driver.find_element_by_css_selector(
             'button.sc-button-more.sc-button.sc-button-medium.sc-button-responsive').click()
-        
+
         try:
-            driver.find_element_by_css_selector('button.sc-button-download').click()
+            driver.find_element_by_css_selector(
+                'button.sc-button-download').click()
             top50[genre]['cnt_download'] += 1
             print('----------- \'' + top50[genre]['songTitle'][m] + '\'' +
                   ' is downloaded -----------' + ' cnt_download: ' + str(top50[genre]['cnt_download']))
@@ -217,6 +316,78 @@ for i, genre in enumerate(top50):
         except:
             print('No download button')
             print('')
+            
+# print result
+for genre in top50:
+    print('song downloaded in [' + genre + ']: ' + str(top50[genre]['cnt_download']))
+    
+# newHot
+for i, genre in enumerate(newHot):
+    # conncet genre url
+    driver.get(newHot[genre]['url'])
+
+    # clear popup
+    try:
+        driver.find_element_by_xpath(
+            '/html/body/div[3]/div/div/button').click()
+        print('Popup cleared')
+    except:
+        print('Popup \'Like this playlist\' deosn\'t show')
+
+    # get page source
+    page_source = driver.page_source
+    soup = BeautifulSoup(page_source, 'html.parser')
+
+    # scroll down
+    for j in range(5):
+        # document.body.scrollHeight : 페이지 세로 길이
+        driver.execute_script(
+            "window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(1)
+
+    # get page source
+    page_source = driver.page_source
+    soup = BeautifulSoup(page_source, 'html.parser')
+
+    # append link, song title, singer to each list
+    for k in range(len(soup.find_all('a', class_='trackItem__trackTitle'))):
+        newHot[genre]['link'].append(soup.find_all(
+            'a', class_='trackItem__trackTitle')[k]['href'])
+        newHot[genre]['songTitle'].append(soup.find_all(
+            'a', class_='trackItem__trackTitle')[k].text)
+        newHot[genre]['singer'].append(soup.find_all(
+            'a', class_='trackItem__username')[k].text)
+
+    # print how many links collected
+    print(str(len(newHot[genre]['link'])) +
+          " link, songtitle and singer of songs in [" + genre + "] collected")
+
+    # click download button if present
+    for m, link in enumerate(newHot[genre]['link']):
+        link_base = 'https://soundcloud.com/'
+        link_song = link_base + link
+        print(link_song)
+        print('\'' + newHot[genre]['songTitle'][m] + '\'' + ' is in progress')
+
+        driver.get(link_song)
+        time.sleep(2)
+        driver.find_element_by_css_selector(
+            'button.sc-button-more.sc-button.sc-button-medium.sc-button-responsive').click()
+
+        try:
+            driver.find_element_by_css_selector(
+                'button.sc-button-download').click()
+            newHot[genre]['cnt_download'] += 1
+            print('----------- \'' + newHot[genre]['songTitle'][m] + '\'' +
+                  ' is downloaded -----------' + ' cnt_download: ' + str(newHot[genre]['cnt_download']))
+            print('')
+        except:
+            print('No download button')
+            print('')
+            
+# print result
+for genre in newHot:
+    print('song downloaded in [' + genre + ']: ' + str(newHot[genre]['cnt_download']))
 
 # to do
 # 1. 로그인 부분,,, 자동으로 할 수 있으면 해야 함
